@@ -1,0 +1,75 @@
+#one p{
+    background-color: red;
+    min-width: 10rem;
+    height: 3rem;
+}
+#one {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#two p{
+    background-color: red;
+    width: 10rem;
+    height: 3rem;
+}
+#two {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+#three #special {
+
+   flex-grow: 0;
+}
+
+#three p{
+    background-color: blue;
+    width: 17%;
+    height: 3rem;
+    flex-grow: 1;
+}
+#three {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-height: 10rem;
+}
+
+#first-rigth {
+    background-color: red;
+    width: 30%;
+    height: 3rem;
+    text-align: center;
+}
+#rigth {
+    background-color: red;
+    width: 15%;
+    height: 3rem;
+}
+
+#four {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+#five p{
+    background-color: red;
+    height: 3rem;
+}
+#first-left{
+width: 15rem;
+}
+#second-left{
+    width: 7rem;
+}
+#third-left{
+    width: 3rem;
+}
+#five {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
