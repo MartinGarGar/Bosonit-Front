@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+  <script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=i-wscENbc15rM0hUzZpJmCCkEEpHO57rpGehm8oFzNyZD5sQzOI1ovjefrjTrFW4COgJVdXxkQO2Yqy3BP1SeY6ebBJdu9SqtCewxqjVkY0Ql-Q8KgpWm4DfMIoS9AAjCeDlUs2J0YgYKvvAs27Gwh2WJvLxmPfgE6Da4R4kjdpywIuZYBwLb5h97VUkeZ8KujWKhRkeh9oyrOm08dobCYiaAH6hoxo2MIyLTZfLieDRtnysZ-zHsy4IKADcfOqovFjPvLezq4XVJMutnU6ggr_HS2EiOmPPORA3m8Avngok2HvY7J8d2yqAS5eUnWYeFEY7C-rFS6YO6wmzPSM2ACQLhZIv4M2Wxazj9hLJuBlHA2RfvcXXlPZnK977TqN33AtezTnipxau7b-P_JVQioYYnYBjligu3FQ5nhOtINNToS3_z9h5Pdclz_eC07BeBz4Zvxp7dJ1fT7at6NfaRfdb78GgZBgFb_tH1nlBigzCmri86HguOKHg487HaJ5WIYF9TPIMRSvk9329hbYODbPlsM3VKeWUquKzKhM8TU5XDGEffbusag6vG1oMXNdpXZh5ZFjOTEdrRk0Lt78xKOOOHLXhSaBOJuWbiIKAo8aFTY4YT9LqyZaamz5r3aG8BNhnfMklHrRO0-r9OnFQRipA5CuJwZwrxDOtPORkto28rUwND-av3-st_9nB_zRzUj5dDXM-udq1tMX9WetNfVEG2e8q0SQUaL3j1G-ggaN9l0Q1qAri5beOHxiqmXzDusf8ym7GvhVUOuuE1QYHMASxvfJugHyAiFgicjuYe1ucm1yyKRwBJ9kZsgnjDJw14oKCTRameBc15bphpZbrGqqrlQhxvJ0dvHfZFQxHqsydX9NbFdKJIBC4YsKdOI2TwJvJVIVOdHoZzUcxG9vRbK-BJiZayEWJ68PW4xNZpmxMNTNYy0KQp256GyFKFd5JEO2McyevwivCDB0savVWHJcZFdmCUbW0qsKNl646PMVCOTAGnN6Hu-ElJCcBv-rNl3AmOanqZqTc0OjI1yQNwDJQhahxL-V-Two-eKn0PMpXqN3qi23RPRLCOYaGH_lGUW6B8ej3q7g4sZi5lu3LYv7UhTO0hPfyNXgYmVdDFhckCy8pB1egOtwIh-LSgr7d0x95ZSe1XtFpiQ2ufSnM5nio3g30k3J34_pDshyAIdNOUKMpRZdXgoUUQbvx1Ock-rWP_QrvyVhYg7YZsPdQA0wUH5xBVSlrnhgCRwO1bHN-qbJTykE1YCLpQq9DFUbLPjzbHTKtmDumRWYFeKnUGw" nonce="933e0c60baa6310de094c77536129e73" charset="UTF-8"></script></head>
+  <body>
+   <div class="container">
+      <h1 id="counter">0</h1>
+
+      <div id="setup" class="setup-container">
+        <h2>Setup</h2>
+        <div id="count-controllers">
+          <button id="start" onclick="start()">Start</button>
+
+          <button id="pause" onclick="pause()" >Pause</button>
+
+          <button id="reset" onclick="reset()">Reset</button>
+        </div>
+      </div>
+
+      <div id="count" class="count-container">
+        <h2>Count</h2>
+        <div id="countDirection">
+          <button id="countUp" onclick="sum()">Count up</button>
+
+          <button id="countDown" onclick="rest()">
+            Count down
+          </button>
+        </div>
+      </div>
+
+      <div id="parameters">
+        <form action="#">
+          <label for="startNumber">Counter starts:</label>
+          <input id="startNumber" type="number" value="0" />
+          <label for="step">Step </label>
+          <input id="step" type="number" value="1" />
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </body>
+</html>
+
