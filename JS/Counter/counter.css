@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button{
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    width: 6rem;
+    background-color: rgba(33, 33, 197, 0.493);
+}
+
+input{
+    border-radius: 5px;
+}

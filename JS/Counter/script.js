@@ -12,7 +12,7 @@ let result
 
 result = getStartNumber();
 
-function start() {
+const start = () => {
   interval = setInterval(function timer() {
     if (operation === 'sum') {
       let stepLength = getStep();
@@ -36,27 +36,27 @@ function getStartNumber() {
   return startNumber;
 }
 
-function getStep() {
+const getStep = ()=> {
   let stepLength = parseInt(step.value);
 
   return stepLength;
 }
 
-function pause() {
+const pause = () => {
   clearInterval(interval);
 }
 
-function reset() {
+const reset = () => {
   counter.innerHTML = parseInt(counterNumber.value)
 }
 
-function sum() {
+const sum = () => {
   operation = 'sum';
 
   return operation;
 }
 
-function rest() {
+const rest = () => {
   operation = 'rest';
 
   return operation;
