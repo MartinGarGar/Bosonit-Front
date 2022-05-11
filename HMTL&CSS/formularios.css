@@ -1,0 +1,41 @@
+header {
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  body {
+    background-color: rgb(224, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  fieldset {
+    background-color: rgba(138, 226, 241, 0.178);
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  
+  #buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  select {
+    border-radius: 8px;
+  }
+  textarea {
+    border-radius: 10px;
+  }
+  
+  input {
+    border-radius: 8px;
+  }
+  

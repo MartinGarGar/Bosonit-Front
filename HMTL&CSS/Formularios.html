@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="formularios.css" />
+    <title>Hamburgueseria Online</title>
+  </head>
+
+  <body>
+    <header>Haz tu pedido!</header>
+    <main>
+      <form>
+        <fieldset>
+          <legend>Personalizar hamburguesa</legend>
+          <p>
+            <input type="checkbox" id="lechuga" />
+            <label for="lechuga">Lechuga</label>
+            <input type="checkbox" id="tomate" />
+            <label for="tomate">Tomate</label>
+            <input type="checkbox" id="cebolla" />
+            <label for="cebolla">Cebolla</label>
+            <input type="checkbox" id="queso" />
+            <label for="queso">Queso</label>
+            <input type="checkbox" id="bacon" />
+            <label for="bacon">Bacon</label>
+          </p>
+          <fieldset>
+            <legend>Escoge un tamaño</legend>
+            <p>
+              <input type="radio" id="pequeño" name="tamaño" />
+              <label for="pequeño">Pequeña</label>
+              <input type="radio" id="mediano" name="tamaño" />
+              <label for="mediano">Mediano</label>
+              <input type="radio" id="grande" name="tamaño" />
+              <label for="grande">Grande</label>
+            </p>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos de entrega</legend>
+          <label for="name">Nombre</label>
+          <input type="text" id="name" />
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" />
+          <label for="num">Teléfono</label>
+          <input type="number" id="num" />
+          <p>
+            <label for="area">Instrucciones especiales</label>
+            <textarea
+              name="area"
+              id="area"
+              cols="30"
+              rows="10"
+              placeholder="Escribe aqui"
+            ></textarea>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Forma de pago</legend>
+          <label for="pago">Seleccione una</label>
+          <select name="pago" id="pago">
+            <option value="">Tarjeta</option>
+            <option value="">Efectivo</option>
+            <option value="">Paypal</option>
+          </select>
+        </fieldset>
+        <div id="buttons">
+          <button type="submit">Enviar</button>
+          <button type="reset">Borrar todo</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
