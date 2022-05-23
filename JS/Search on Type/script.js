@@ -4,7 +4,7 @@ let results = document.getElementById('results');
 
 const setParameter = (chosenParameter) => {
     parameter=chosenParameter
-    console.log('parametro', parameter);
+
 }
 
 const search = async () => {
@@ -37,17 +37,6 @@ return  `
 
 
 results.innerHTML = mapedData.join('')
-console.log(data.results);
+
 }
 
-const statusSearch = async () => {
-    const respuesta = await fetch('https://rickandmortyapi.com/api/character/?status=alive')
-   const data = await respuesta.json()
-   console.log(data);
-   }
-
-   const genderSearch = async () => {
-    const respuesta = await fetch('https://rickandmortyapi.com/api/character/?gender=male')
-   const data = await respuesta.json()
-   console.log(data);
-   }
