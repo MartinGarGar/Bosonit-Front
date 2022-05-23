@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    background-color: rgb(48, 47, 47);
+    color: beige;
+    width: 5rem;
+    border-radius: 10px;
+
+}
+
+input {
+    border-radius: 10px;
+}

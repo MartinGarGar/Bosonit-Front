@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Busca tu personaje favorito de Rick and Morty</h1>
+        <ul>
+            <li>
+                Nombre: Busca por el nombre del personaje
+            </li>
+            <li>
+                Status: Busca si el personaje está vivo (alive), muerto (dead) o desconocido (unknwon)
+            </li>
+            <li>
+               Género: Busca si el personaje es chico (male), chica (female) o desconocido (unknwon)
+            </li>
+        </ul>
+        <form action="#">
+            
+            <div id="parameters">
+                <abbr title="Nombre"><button id="name" onclick="setParameter('name')">Nombre</button></abbr>
+            
+                <abbr title="Status: Alive, Dead or Unknwon"> <button id="status" onclick="setParameter('status')">
+                    status
+                  </button></abbr>
+                  <abbr title="Género: Male, Female or Unknwon"><button id="gender" onclick="setParameter('gender')">
+                    Género
+                  </button></abbr>
+               
+                
+                <label id="search" for="inputSearch"></label>
+            <input id="inputSearch" type="text" value="" onkeyup="search()" />
+        </form>
+        <div id="results">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
