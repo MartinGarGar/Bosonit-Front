@@ -21,23 +21,21 @@ export class MainPageComponent {
     }
   ]
 
-  nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+  nuevo: Personaje={
+    nombre:'',
+    poder:0
   }
+
 
   cambiarNombre(event: any) {
     console.log(event);
     
   }
 
- agregar(){
-  if(this.nuevo.nombre.trim().length === 0){
-  return;
+  agregarNuevoPersonaje (newPersonaje: Personaje) {
+    console.log('main page component');
+    this.personajes.push(newPersonaje)
   }
 
-   this.personajes.push(this.nuevo)
-   this.nuevo = { nombre: '', poder: 0}
-   
- }
+
 }
