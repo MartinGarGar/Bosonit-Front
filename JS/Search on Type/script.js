@@ -1,9 +1,27 @@
-let input = document.getElementById('inputSearch');
-let parameter = ''
-let results = document.getElementById('results');
+const input = document.getElementById('inputSearch');
+const results = document.getElementById('results');
+const nombre = document.getElementById('nombre')
+const estado = document.getElementById('estado')
+const genero = document.getElementById('genero')
 
+let parameter = 'name'
 const setParameter = (chosenParameter) => {
     parameter=chosenParameter
+    if(parameter === 'name') {
+        nombre.classList.add("active");
+        estado.classList.remove("active");
+        genero.classList.remove("active");
+    }
+    if(parameter === 'status') {
+        estado.classList.add("active");
+        genero.classList.remove("active");
+        nombre.classList.remove("active");
+    }
+    if(parameter === 'gender') {
+        genero.classList.add("active");
+        estado.classList.remove("active");
+        nombre.classList.remove("active");
+    }
 
 }
 

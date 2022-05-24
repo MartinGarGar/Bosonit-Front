@@ -17,3 +17,7 @@ button {
 input {
     border-radius: 10px;
 }
+
+.active{
+    background-color: yellow;
+}
