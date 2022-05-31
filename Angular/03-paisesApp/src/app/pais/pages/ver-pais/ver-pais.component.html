@@ -1,0 +1,9 @@
+<div *ngIf="!pais" 
+    class="alert alert-info">Espere por favor...</div>
+
+<div class="row">
+    <div class="col-12">
+        <h1>País: <small>{{pais.name.common}}</small></h1>
+    </div>
+    <h3>{{pais | json}}</h3>
+</div>
