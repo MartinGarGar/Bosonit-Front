@@ -1,0 +1,14 @@
+<div class="parent-container">
+    <h1>PARENT</h1>
+    <h5>Message: {{parentMsg}}</h5>
+    <div class="buttons">
+        
+        <button (click)="parentSrvEmit()">Use Service</button>
+        <button (click)="inputProperty()">Use Input Property</button>
+        <button (click)="parentObservable()">Use Observable</button>
+    </div>
+
+    <app-children [childMsg]="childMsg"
+    (parentMsg)='outputProperty($event)'>
+    </app-children>
+</div>
