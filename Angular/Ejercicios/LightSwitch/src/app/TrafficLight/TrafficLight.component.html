@@ -1,0 +1,13 @@
+<div class="traffic-light">
+    <div class="lights">
+        <div *ngIf="selectedColor == 'rojo' && lightsOn == 'on'; else off" class="red-light"></div>
+        <div *ngIf="selectedColor == 'amarillo' && lightsOn == 'on'; else off"  class="yellow-light "></div>
+        <div *ngIf="selectedColor == 'verde' && lightsOn == 'on'; else off"  class="green-light "></div>
+    </div>
+
+    <ng-template #off>
+        <div class="off"></div>
+    </ng-template>
+    
+
+</div>

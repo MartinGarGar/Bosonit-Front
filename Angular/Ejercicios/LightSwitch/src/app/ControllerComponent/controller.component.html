@@ -1,0 +1,23 @@
+<div class="switch">
+    <h1>Controlador</h1>
+
+    <div class="form">
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Color del semaforo</mat-label>
+            <mat-select (selectionChange)="changeColor($event)">
+              <mat-option *ngFor="let color of colors" [value]="color">
+                {{color | titlecase}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <form>
+            <label for="color">Color del Semáforo</label>
+            <select id="color" (change)="selectColor($event)">
+                <option [value]="color" *ngFor="let color of colors">{{color | titlecase}}</option>
+            </select>
+        </form>
+    
+        <input type="checkbox" id="switch" name="switch" (change)="switchOn($event)" >
+        Encendido / Apagado
+    </div>
+</div>
