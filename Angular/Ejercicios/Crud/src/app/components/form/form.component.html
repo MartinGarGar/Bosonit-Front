@@ -1,0 +1,144 @@
+<h3>Formulario de Registro</h3>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="show()" autocomplete="off" [formGroup]="miFormulario">
+            
+   
+            <div class="mb-3 row">
+                <label class="row-sm-3 row-form-label">Nombre de usuario</label>
+                <div class="row-sm-9">
+                    
+                    <input type="text"
+                           class="form-control"
+                           formControlName="name"
+                           placeholder="Nombre...">
+
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="row-sm-3 row-form-label">Contraseña</label>
+                <div class="row-sm-9">
+                    <input type="password"
+                           class="form-control"
+                           formControlName="pass1"
+                           >
+                  
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="row-sm-3 row-form-label">Confirma la Contraseña</label>
+                <div class="row-sm-9">
+                    <input type="password"
+                           class="form-control"
+                           formControlName="pass2"
+                           >
+                           <span class="form-text text-danger"
+                           *ngIf="invalidInput('pass2')">
+                            Las contraseñas deben de ser iguales
+                     </span>
+                  
+                </div>
+            </div>
+  
+            <div class="mb-3 row">
+                <label class="row-sm-3 row-form-label">Correo</label>
+                <div class="row-sm-9">
+                    <input type="email"
+                           class="form-control"
+                           formControlName="email"
+                           >
+                    
+                           <span class="form-text text-danger"
+                           *ngIf="invalidInput('email')">
+                            Debes introducir un correo válido
+                     </span>
+                </div>
+            </div>
+
+  
+            <div class="row mb-3">
+            <label class="row-sm-3 row-form-label"></label>
+                 <div class="row-sm-9">
+
+              <div class="form-check form-switch mt-2">
+                <input class="form-check-input"
+                       type="checkbox"
+                       formControlName="suscription"
+                       id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Quiero recibir notificaciones</label>
+            </div>
+
+          </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="row-sm-3 row-form-label">Pais</label>
+                <div class="row-sm-9">
+                    
+                    <select type=""
+                           class="form-control"
+                           formControlName="country"
+                           >
+                           <option [value]="item" *ngFor="let item of countries">{{item}} </option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="row-sm-3 row-form-label">Ciudad</label>
+                <div class="row-sm-9">
+                    
+                    <input type="text"
+                           class="form-control"
+                           formControlName="city"
+                           >
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            class="btn btn-primary float-end">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+
+
+       
+            </form>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="row">
+    <div class="row">
+
+        <span>Valid</span>
+        <pre>{{ miFormulario.valid }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ miFormulario.pristine }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ miFormulario.touched }}</pre>
+
+        <span>Value</span>
+        <pre>{{ miFormulario.value | json }}</pre>
+
+        <span>Precio</span>
+        <pre>{{ miFormulario.controls.precio.errors | json }}</pre>
+    </div>
+</div> -->
+
