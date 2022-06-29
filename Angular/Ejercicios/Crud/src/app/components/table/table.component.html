@@ -1,0 +1,43 @@
+<table class="table table-hover">
+  <thead>
+      <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Suscrito</th>
+          <th>País</th>
+          <th>Ciudad</th>
+          <th>Acciones</th>
+      </tr>
+  </thead>
+  <tbody>
+
+      <tr *ngFor="let user of users; let i = index" >
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+
+          <td *ngIf="user.suscription; else noSuscription" class="mt-3">
+              <span class="material-icons">
+                notifications
+              </span>
+          </td>
+          <ng-template #noSuscription>
+              <td>
+                  <span class="material-icons">
+                    notifications_off
+                  </span>
+              </td>
+          </ng-template>
+
+          <td>{{user.country}}</td>
+          <td>{{user.city}}</td>
+          <td>
+              <span class="material-icons" style="cursor: pointer;" (click)="editUser(user)">
+                  edit
+              </span>
+              <span class="material-icons" style="cursor: pointer;" (click)="deleteUser(user)">
+                  delete
+              </span>
+          </td>
+      </tr>
+  </tbody>
+</table>

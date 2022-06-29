@@ -11,18 +11,20 @@ export class ValidatorService {
   constructor() { }
 
 
-  comparePassword ( pass1: string, pass2: string) {
-    return (FormGroup: AbstractControl): ValidationErrors | null => {
+  comparePassword ( password: string, password2: string) {
+    return (formGroup: AbstractControl): ValidationErrors | null => {
 
-      const password1 = FormGroup.get(pass1)?.value
-      const password2 = FormGroup.get(pass2)?.value
+      const pass1 = formGroup.get(password)?.value
+      const pass2 = formGroup.get(password2)?.value
 
-      if (password1 !== password2) {
-        FormGroup.get('pass2')?.setErrors({noMatch : true})
+      if (pass1 !== pass2) {
+        formGroup.get('password2')?.setErrors({noMatch : true})
         return { noMatch : true}
       }
 
-      return null
+      formGroup.get(password2)?.setErrors(null);
+      return null;
     }
+    
   }
 }

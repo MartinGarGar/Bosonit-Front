@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "Martin",
+      "password": "12345",
+      "email": "martin@mail.com",
+      "suscription": true,
+      "country": "España",
+      "city": "Santiago",
+      "id": 1
+    },
+    {
+      "name": "Alicia Lopez",
+      "password": "12345",
+      "email": "alilo@mail.com",
+      "suscription": false,
+      "country": "Portugal",
+      "city": "Porto",
+      "id": 2
+    },
+    {
+      "id": 4,
+      "name": "Pedro Perez",
+      "password": "12345",
+      "password2": "",
+      "email": "pedro@mail.coom",
+      "suscription": false,
+      "country": "Francia",
+      "city": "Lille"
+    }
+  ]
+}
