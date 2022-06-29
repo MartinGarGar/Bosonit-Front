@@ -26,7 +26,17 @@
       "email": "pedro@mail.coom",
       "suscription": false,
       "country": "Francia",
-      "city": "Lille"
+      "city": "Paris"
+    },
+    {
+      "id": 5,
+      "name": "Jose",
+      "password": "12345",
+      "password2": "12345",
+      "email": "jose@mail.com",
+      "suscription": true,
+      "country": "Alemania",
+      "city": "Berlin"
     }
   ]
 }

@@ -41,7 +41,9 @@ export class TableComponent implements OnInit{
   createUser() {
     this._apiSv.userObservable$.subscribe((user: User) => {
       this.newUser = user;
+      this.ngOnInit()
     })
+ 
   }
 
   editUser(user: User) {

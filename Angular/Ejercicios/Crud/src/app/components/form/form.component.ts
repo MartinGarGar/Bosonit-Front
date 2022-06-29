@@ -70,18 +70,19 @@ miFormulario: FormGroup = this._fb.group({
     )
 
     this.values = this.miFormulario.value
-
-    if (this.users.filter (e => { e.email === this.values.email})) {
+      if(this.values.id){
+    if (this.users.filter (e => { e.id === this.values.id})) {
       this._apiSv.editUser(this.values).subscribe({
         next: resp => console.log('Actulizando', this.values)});
         
-    }
+    }}
     else {
     this._apiSv.createUser(this.values)
     .subscribe (resp => {
       console.log('respuesta', resp);
-      
+    
     })}
+  
   }
   show() {
     console.log( 'miformulario.value', this.miFormulario.value);
