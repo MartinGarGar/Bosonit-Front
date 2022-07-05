@@ -17,25 +17,25 @@ export class TableComponent implements OnInit{
 
   newUser!: User; 
 
-  editedUser!: User; 
-
-  isEdit: boolean = false;
-
 
   constructor(
     private _apiSv: ApiService,
   ) { }
 
   ngOnInit(): void {
+    this.loadUsers()
+
+
+    
+  }
+
+  loadUsers() {
     
     this._apiSv.getUsers().subscribe(
       users => {
         this.users = users;
       }
     )
-
-
-    
   }
 
   createUser() {
@@ -49,6 +49,7 @@ export class TableComponent implements OnInit{
   editUser(user: User) {
     this._apiSv.setUser(user);
     this._apiSv.setUserSubject$(user);
+    this.loadUsers()
   }
 
   deleteUser(user: User) {
@@ -58,8 +59,8 @@ export class TableComponent implements OnInit{
       }
     );
 
-    
-    
+     
   }
+  
 
 }

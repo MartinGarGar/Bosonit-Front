@@ -1,0 +1,55 @@
+<h2>Template Dinamicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="guardar()" #miFormulario="ngForm" autocomplete="off">
+
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label" for="persona">Persona</label>
+                <div class="col-sm-9">
+                    <input type="text"
+                        class="form-control"
+                        name="persona"
+                        [ngModel] = "persona.nombre"
+                        placeholder="Nombre de la Persona">
+                       
+                        <span class="form-text text-danger"
+                        *ngIf="">
+                        Debe de ser de 3 letras</span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button 
+                        type="submit"
+                        (click)="guardar()"
+                        class="btn btn-primary float-end">
+                         Guardar    
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        <span>Valid</span>
+        <pre>{{miFormulario.valid}}</pre>
+
+        <span>Pristine</span>
+        <pre>{{miFormulario.pristine}}</pre>
+
+        <span>Touched</span>
+        <pre>{{miFormulario.touched}}</pre>
+
+        <span>Valor</span>
+        <pre>{{miFormulario.value | json}}</pre>
+    </div>
+</div>

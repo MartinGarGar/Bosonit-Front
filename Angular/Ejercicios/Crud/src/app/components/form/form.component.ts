@@ -44,11 +44,7 @@ miFormulario: FormGroup = this._fb.group({
               private _apiSv : ApiService) { }
 
   ngOnInit(): void {
-    this._apiSv.userObservable$.subscribe(
-      user => {
-        this.miFormulario.patchValue(user)
-      }
-    )
+    this.loadUser()
   }
 
 
@@ -59,15 +55,20 @@ miFormulario: FormGroup = this._fb.group({
             && this.miFormulario.get(input)?.touched;
   }
 
+  
+  loadUser() {
+    this._apiSv.userObservable$.subscribe(
+      user => {
+        this.miFormulario.patchValue(user)
+      }
+    )
+  }
+
 
 
   guardar() {
 
-    this._apiSv.getUsers().subscribe(
-      users => {
-        this.users = users;
-      }
-    )
+  
 
     this.values = this.miFormulario.value
       if(this.values.id){

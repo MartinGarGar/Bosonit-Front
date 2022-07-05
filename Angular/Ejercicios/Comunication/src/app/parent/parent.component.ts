@@ -34,7 +34,7 @@ parentSrvEmit() {
   this._ComunicationSrv.sendChildMsg('PARENT USING SERVICE')
 }
 parentObservable() {
-  this._ObservableSrv.childMsg.next('PARENTE USING OBSERVABLE')
+  this._ObservableSrv.childMsg.next('PARENT USING OBSERVABLE')
   
 }
 

@@ -20,20 +20,18 @@ export class PorCapitalComponent  {
     console.log(this.termino);
 
     this.paisService.buscarCapital(this.termino)
-      .subscribe( (paisesRes) => {
-        this.paises = paisesRes
-        
-
-  
+      .subscribe( {
+        next: (paisesRes) => {
+          this.paises = paisesRes
         },
-        (err)=> {
+        error: (err) => {
           this.hayError=true;
           this.paises = []
-          
-        });
+
+        }
+      });
 
 
     
-  }
+  }}
  
-}

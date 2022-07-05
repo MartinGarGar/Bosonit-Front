@@ -40,7 +40,9 @@ export class ApiService {
 
   createUser(user: User): Observable<User> {
     
-    return this.http.post<User>(`${this._url}/users`, user);
+    return this.http.post<User>(`${this._url}/users`, user)
+
+    
     
   }
 
