@@ -1,1 +1,22 @@
-<p>bars works!</p>
+<div class="row">
+    <div class="col">
+        <div style="display: block">
+            <div *ngIf="barChartData.datasets[0].data.length === 0  ; else barchart" >
+                Cargando!
+            </div>
+            <ng-template #barchart>    
+                <canvas baseChart
+                
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [type]="barChartType"
+                    >
+                </canvas>
+            </ng-template>
+       
+    </div>
+          <button mat-button mat-raised-button color="primary" (click)="show()">Update</button>
+    </div>
+
+</div>
+

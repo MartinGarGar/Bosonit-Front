@@ -108,5 +108,7 @@
       }
     }
   },
-  "defaultProject": "ExternalGraphics"
+  "cli": {
+    "analytics": "16bf0c94-980f-4290-a469-4d837f1443de"
+  }
 }
