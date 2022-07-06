@@ -3,9 +3,7 @@ import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
 import { GraphicsService } from '../../services/graphics.service';
-import { Person } from '../../interfaces/person.interface';
-import { MalesCount } from '../../interfaces/malesCount.interface';
-import { Data } from '../../interfaces/data.interface';
+
 import { Wheather } from '../../interfaces/wheather.interface';
 
 
@@ -18,26 +16,41 @@ import { Wheather } from '../../interfaces/wheather.interface';
 })
 export class BarsComponent implements OnInit  {
 
-  maleAlive: Person[] = []
-  maleDead: Person[] = []
-  maleUnkonw: Person[] = []
-  femaleAlive: Person[] = []
-  femaleDead: Person[] = []
-  femaleUnkonw: Person[] = []
-
-  males : number[] = []
-  females : number[] = []
   
-
-  femalesAliveNumber!: number 
-  femalesDeadNumber!: number 
-  femalesUnknownNumber!: number 
 
 
   newYork : number [] = []
   santiago: number [] = []
 
   
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+
+  public barChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
+    scales: {
+      x: {},
+      y: {
+        min: 10,
+      },
+    },
+    plugins: {
+      legend: {
+        display: true,
+      }
+    },
+  };
+  public barChartType: ChartType = 'bar';
+
+  public barChartData: ChartData<'bar'> = {
+    labels: ['Temperatura', 'Sensación térmica' , 'humedad'],
+    datasets: [
+      { data:  this.newYork, label: 'Nueva York'  },
+     { data: this.santiago , label: 'Santiago'  }
+    ],
+  };
+
+
 
   constructor(private _graphicsSvc : GraphicsService) {
 
@@ -69,38 +82,17 @@ export class BarsComponent implements OnInit  {
 
 
 
-  show() {
-    console.log(this.barChartData);
-    
-  }
-  
  
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+ 
 
-  public barChartOptions: ChartConfiguration['options'] = {
-    responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
-    scales: {
-      x: {},
-      y: {
-        min: 10,
-      },
-    },
-    plugins: {
-      legend: {
-        display: true,
-      }
-    },
-  };
-  public barChartType: ChartType = 'bar';
+   // events
+   public chartClicked({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
+    console.log(event, active);
+  }
 
-  public barChartData: ChartData<'bar'> = {
-    labels: ['Temperatura', 'Sensación térmica' , 'humedad'],
-    datasets: [
-      { data:  this.newYork, label: 'Nueva York'  },
-     { data: this.santiago , label: 'Santiago'  }
-    ],
-  };
+  public chartHovered({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
+    console.log(event, active);
+  }
 
 }
 

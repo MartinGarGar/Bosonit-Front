@@ -3,16 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { GraphicsRoutingModule } from './graphics-routing.module';
 import { BarsComponent } from './pages/bars/bars.component';
-import { DoubleBarsComponent } from './pages/double-bars/double-bars.component';
-import { LineComponent } from './pages/line/line.component';
+import { RadarComponent } from './pages/radar/radar.component';
 import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
   declarations: [
     BarsComponent,
-    DoubleBarsComponent,
-    LineComponent
+    RadarComponent
   ],
   imports: [
     CommonModule,

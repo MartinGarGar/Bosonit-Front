@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BarsComponent } from './pages/bars/bars.component';
-import { DoubleBarsComponent } from './pages/double-bars/double-bars.component';
-import { LineComponent } from './pages/line/line.component';
+import { RadarComponent } from './pages/radar/radar.component';
 
 const routes: Routes = [
 
@@ -11,8 +10,7 @@ const routes: Routes = [
   path: '',
   children: [
     {path: 'bars', component: BarsComponent},
-  {path: 'double-bars', component: DoubleBarsComponent},
-  {path: 'line', component: LineComponent},
+  {path: 'radar', component: RadarComponent},
   {path: '**', redirectTo: 'bars'},
   ]
 }
