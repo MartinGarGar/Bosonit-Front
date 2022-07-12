@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { switchMap } from 'rxjs';
 import { User } from 'src/app/interfaces/user.interface';
 import { ApiService } from 'src/app/services/api.service';
 import { ValidatorService } from '../../shared/validator/validator.service';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-form',
@@ -30,9 +32,9 @@ miFormulario: FormGroup = this._fb.group({
   city: ['' , [ Validators.required,  ]   ],
 
 },
-{
+/* {
   Validators: [ this._validatorSv.comparePassword('password','password2')],
-})
+} */)
 
 
   users: User[] = [];
@@ -41,10 +43,11 @@ miFormulario: FormGroup = this._fb.group({
 
   constructor(private _fb : FormBuilder,
               private _validatorSv : ValidatorService,
-              private _apiSv : ApiService) { }
+              private _apiSv : ApiService,
+              ) {    this.loadUser() }
 
   ngOnInit(): void {
-    this.loadUser()
+
   }
 
 
@@ -64,26 +67,28 @@ miFormulario: FormGroup = this._fb.group({
     )
   }
 
+ guardar()  {
 
-
-  guardar() {
-
-  
-
-    this.values = this.miFormulario.value
+      this.values = this.miFormulario.value
       if(this.values.id){
     if (this.users.filter (e => { e.id === this.values.id})) {
-      this._apiSv.editUser(this.values).subscribe({
-        next: resp => console.log('Actulizando', this.values)});
+      this._apiSv.editUser(this.values).subscribe(() => {
+        this._apiSv.loadUsers()
+
         
+      });
+      
     }}
     else {
-    this._apiSv.createUser(this.values)
-    .subscribe (resp => {
-      console.log('respuesta', resp);
-    
-    })}
-  
+      this._apiSv.createUser(this.values).subscribe ( () => {
+        this._apiSv.loadUsers()
+   
+        
+      })
+    }
+      this.miFormulario.reset()
+ 
+      
   }
   show() {
     console.log( 'miformulario.value', this.miFormulario.value);

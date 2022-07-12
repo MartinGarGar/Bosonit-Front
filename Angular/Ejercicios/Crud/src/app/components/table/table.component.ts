@@ -13,49 +13,37 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class TableComponent implements OnInit{
 
-  users: User[] = [];
+  public get users(): User[] {
+    return  this._apiSv._usersList;;
+  }
+  public set users(value: User[]) {
+   this._apiSv._usersList = value;
+  }
 
   newUser!: User; 
 
 
   constructor(
     private _apiSv: ApiService,
-  ) { }
+  ) {   this._apiSv.loadUsers() }
 
-  ngOnInit(): void {
-    this.loadUsers()
+  ngOnInit(): void {   
 
-
-    
   }
 
-  loadUsers() {
-    
-    this._apiSv.getUsers().subscribe(
-      users => {
-        this.users = users;
-      }
-    )
-  }
 
-  createUser() {
-    this._apiSv.userObservable$.subscribe((user: User) => {
-      this.newUser = user;
-      this.ngOnInit()
-    })
- 
-  }
+
 
   editUser(user: User) {
     this._apiSv.setUser(user);
     this._apiSv.setUserSubject$(user);
-    this.loadUsers()
+    this._apiSv.loadUsers()
   }
 
   deleteUser(user: User) {
     this._apiSv.deleteUser(user.id!).subscribe(
       () => {
-        this.ngOnInit();
+        this._apiSv.loadUsers();
       }
     );
 

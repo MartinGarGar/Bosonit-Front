@@ -10,9 +10,12 @@ import { Observable, Observer, Subject, switchMap } from 'rxjs';
 })
 export class ApiService {
 
+  
   private _url: string = 'http://localhost:3000'; 
   
-  private _user!: User;
+  public _user!: User;
+
+  public _usersList: User [] = []
 
   private _userSubject$: Subject<User> = new Subject();
   public userObservable$ = this._userSubject$.asObservable();
@@ -40,10 +43,7 @@ export class ApiService {
 
   createUser(user: User): Observable<User> {
     
-    return this.http.post<User>(`${this._url}/users`, user)
-
-    
-    
+    return this.http.post<User>(`${this._url}/users`, user);    
   }
 
   editUser(user: User): Observable<User> {
@@ -54,4 +54,17 @@ export class ApiService {
   deleteUser(id: number): Observable<User> {
     return this.http.delete<User>(`${this._url}/users/${id}`);
   }
+
+  loadUsers() {
+    
+    this.getUsers().subscribe(
+      users => {
+        this._usersList = users;
+        console.log('lista en api',this._usersList);
+        
+      }
+    )
+  }
+
+
 }

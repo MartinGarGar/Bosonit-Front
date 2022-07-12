@@ -1,4 +1,4 @@
-<h3>Formulario de Registro</h3>
+<h3><b>Formulario de Registro</b></h3>
 <hr>
 
 <div class="row">
@@ -26,7 +26,10 @@
                            class="form-control"
                            formControlName="password"
                            >
-                  
+                           <span class="form-text text-danger"
+                           *ngIf="invalidInput('password')">
+                            La contraseñas debe tener al menos 4 digitos
+                     </span>
                 </div>
             </div>
 
@@ -121,25 +124,4 @@
 </div>
 
 
-
-
-<!-- <div class="row">
-    <div class="row">
-
-        <span>Valid</span>
-        <pre>{{ miFormulario.valid }}</pre>
-
-        <span>Pristine</span>
-        <pre>{{ miFormulario.pristine }}</pre>
-
-        <span>Touched</span>
-        <pre>{{ miFormulario.touched }}</pre>
-
-        <span>Value</span>
-        <pre>{{ miFormulario.value | json }}</pre>
-
-        <span>Precio</span>
-        <pre>{{ miFormulario.controls.precio.errors | json }}</pre>
-    </div>
-</div> -->
 

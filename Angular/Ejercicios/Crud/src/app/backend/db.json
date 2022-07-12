@@ -1,13 +1,14 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "Martin",
       "password": "12345",
+      "password2": "",
       "email": "martin@mail.com",
       "suscription": true,
       "country": "España",
-      "city": "Santiago",
-      "id": 1
+      "city": "Santiago"
     },
     {
       "name": "Alicia Lopez",
@@ -27,6 +28,16 @@
       "suscription": false,
       "country": "Francia",
       "city": "Lille"
+    },
+    {
+      "id": 5,
+      "name": "Aitor Sanz",
+      "password": "1234",
+      "password2": "1234",
+      "email": "aitor@mail.com",
+      "suscription": true,
+      "country": "Portugal",
+      "city": "Braga"
     }
   ]
 }
